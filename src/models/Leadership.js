@@ -23,6 +23,7 @@ const leadershipSchema = new mongoose.Schema(
       default: false,
     },
   },
+  
   { timestamps: true }
 );
 
