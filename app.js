@@ -12,7 +12,7 @@ import galleryRoutes from "./src/routes/galleryController.js";
 import leadershipRoutes from "./src/routes/leadershipRoutes.js";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
-import sitemapRoutes from "./routes/sitemapRoutes.js";
+import sitemapRoutes from "./src/routes/sitemap.js";
 
 
 
