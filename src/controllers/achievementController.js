@@ -1,27 +1,31 @@
 import Achievement from "../models/Achievements.js";
 
-export const create = async (req, res) => {
-  const {title, description, year} = req.body;
+  export const create = async (req, res) => {
+  const { title, description, year } = req.body;
 
   const achievement = await Achievement.create({
     title,
     description,
-    year
+    year // ✅ ADD THIS
   });
-  res.json(achievement)
+
+  res.json(achievement);
 };
 
 export const getAll = async (req, res) => {
   res.json(await Achievement.find());
 };
 
+
 export const update = async (req, res) => {
-  const { title, description, year} = req.body;
+  const { title, description, year } = req.body;
 
   const updated = await Achievement.findByIdAndUpdate(
-    req.params.id, {title, description, year},
-    {new:true}
+    req.params.id,
+    { title, description, year }, // ✅ include year
+    { new: true }
   );
+
   res.json(updated);
 };
 
