@@ -12,6 +12,8 @@ import galleryRoutes from "./src/routes/galleryController.js";
 import leadershipRoutes from "./src/routes/leadershipRoutes.js";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
+import sitemapRoutes from "./routes/sitemapRoutes.js";
+
 
 
 
@@ -23,8 +25,13 @@ app.use(express.json());
 
 app.use(helmet());
 
+import cors from "cors";
+
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    "https://rt-hon-asuakak-client.vercel.app"
+  ],
   credentials: true
 }));
 
@@ -35,6 +42,8 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
+
+app.use("/", sitemapRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/education", educationRoutes);
@@ -44,6 +53,7 @@ app.use("/api/achievement", achievementRoutes);
 app.use("/api/news", newsRoutes);
 app.use("/api/gallery", galleryRoutes);
 app.use("/api/leadership", leadershipRoutes);
+
 
 
 export default app;
