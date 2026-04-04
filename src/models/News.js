@@ -1,9 +1,30 @@
 import mongoose from "mongoose";
 
-const achievementSchema = new mongoose.Schema({
-  title: String,
-  year: String,
-  description: String,
-}, { timestamps: true });
+const newsSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+    },
 
-export default mongoose.model("Achievement", achievementSchema);
+    content: {
+      type: String,
+      required: true,
+    },
+
+    image: {
+      type: String, // Cloudinary URL
+      default: "",
+    },
+
+    author: {
+      type: String,
+      default: "Admin",
+    },
+  },
+  {
+    timestamps: true, // 🔥 adds createdAt
+  }
+);
+
+export default mongoose.model("News", newsSchema);

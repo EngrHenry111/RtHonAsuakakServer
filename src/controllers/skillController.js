@@ -6,7 +6,7 @@ export const create = async (req, res) => {
 
 export const getAll = async (req, res) => {
   res.json(await Skill.find());
-};
+}; 
 
 export const update = async (req, res) => {
   res.json(await Skill.findByIdAndUpdate(req.params.id, req.body, { new: true }));

@@ -5,4 +5,4 @@ const skillSchema = new mongoose.Schema({
   level: String, // Beginner | Intermediate | Expert
 }, { timestamps: true });
 
-export default mongoose.model("Skill", skillSchema);
+export default mongoose.model("Skill", skillSchema); 
