@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/sitemap.xml", async (req, res) => {
   try {
     const smStream = new SitemapStream({
-      hostname: "https://rt-hon-asuakak-client.vercel.app"
+      hostname: "https://rt-hon-asuakak-k2o9.vercel.app"
     });
 
     // STATIC PAGES

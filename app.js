@@ -30,7 +30,7 @@ import cors from "cors";
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://rt-hon-asuakak-client.vercel.app"
+    "https://rt-hon-asuakak-k2o9.vercel.app"
   ],
   credentials: true
 }));
