@@ -33,4 +33,4 @@ export default mongoose.model(
   "Education",
   educationSchema
 );
-`
+
