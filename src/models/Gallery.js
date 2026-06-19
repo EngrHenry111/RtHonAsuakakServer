@@ -1,7 +1,51 @@
 import mongoose from "mongoose";
 
-const gallerySchema = new mongoose.Schema({
-  image: String,
-}, { timestamps: true });
+const gallerySchema = new mongoose.Schema(
+  {
+    image: {
+      type: String,
+      required: true,
+    },
 
-export default mongoose.model("Gallery", gallerySchema);
+    title: {
+      type: String,
+      required: true,
+    },
+
+    description: {
+      type: String,
+      required: true,
+    },
+
+    eventDate: {
+      type: Date,
+      required: true,
+    },
+
+    location: {
+      type: String,
+      default: "",
+    },
+
+    category: {
+      type: String,
+      enum: [
+        "Award",
+        "Project",
+        "Community",
+        "Meeting",
+        "Education",
+        "Leadership"
+      ],
+      default: "Leadership",
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+export default mongoose.model(
+  "Gallery",
+  gallerySchema
+);
