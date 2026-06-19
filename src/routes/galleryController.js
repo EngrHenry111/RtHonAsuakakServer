@@ -5,8 +5,31 @@ import protect from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-router.post("/", protect, upload.single("image"), ctrl.create);
+
+// Public Routes
 router.get("/", ctrl.getAll);
-router.delete("/:id", protect, ctrl.remove);
+router.get("/:id", ctrl.getOne);
+
+
+// Protected Routes
+router.post(
+  "/",
+  protect,
+  upload.single("image"),
+  ctrl.create
+);
+
+router.put(
+  "/:id",
+  protect,
+  upload.single("image"),
+  ctrl.update
+);
+
+router.delete(
+  "/:id",
+  protect,
+  ctrl.remove
+);
 
 export default router;
