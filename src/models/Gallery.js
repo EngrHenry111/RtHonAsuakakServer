@@ -10,11 +10,13 @@ const gallerySchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
+      trim: true,
     },
 
     description: {
       type: String,
       required: true,
+      trim: true,
     },
 
     eventDate: {
@@ -25,6 +27,7 @@ const gallerySchema = new mongoose.Schema(
     location: {
       type: String,
       default: "",
+      trim: true,
     },
 
     category: {
@@ -35,7 +38,7 @@ const gallerySchema = new mongoose.Schema(
         "Community",
         "Meeting",
         "Education",
-        "Leadership"
+        "Leadership",
       ],
       default: "Leadership",
     },
